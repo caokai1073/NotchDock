@@ -6,9 +6,9 @@
 
 ---
 
-This repository hosts the support page and issue tracker for NotchDock. The app's source code is not published here.
+Support and feedback for NotchDock.
 
-本仓库用于 NotchDock 的技术支持与问题反馈，不包含 App 源代码。
+NotchDock 技术支持与问题反馈。
 
 - 🐞 **Report a bug / 反馈问题**: [New issue](../../issues/new/choose)
 - 📖 **Support page / 支持页面**: see the GitHub Pages site of this repository

@@ -11,5 +11,4 @@ Support and feedback for NotchDock.
 NotchDock 技术支持与问题反馈。
 
 - 🐞 **Report a bug / 反馈问题**: [New issue](../../issues/new/choose)
-- 📖 **Support page / 支持页面**: see the GitHub Pages site of this repository
-- 🔒 **Privacy / 隐私**: NotchDock does not collect any personal data. [Privacy policy](privacy.html)
+- 🔒 **Privacy / 隐私**: NotchDock does not collect any personal data. [Privacy policy / 隐私政策](PRIVACY.md)

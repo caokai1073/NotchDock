@@ -59,7 +59,7 @@
     <section>
       <h2>Get help</h2>
       <p>Found a bug or have a feature idea? Open an issue on GitHub — we read every one.</p>
-      <a class="btn issues-link" href="#">Report an issue</a>
+      <a class="btn issues-link" href="https://github.com/caokai1073/NotchDock/issues/new/choose">Report an issue</a>
     </section>
 
     <section>
@@ -97,7 +97,7 @@
     <section>
       <h2>获取帮助</h2>
       <p>遇到问题，或有功能建议？请在 GitHub 上提交 Issue，每一条我们都会查看。</p>
-      <a class="btn issues-link" href="#">提交问题反馈</a>
+      <a class="btn issues-link" href="https://github.com/caokai1073/NotchDock/issues/new/choose">提交问题反馈</a>
     </section>
 
     <section>
@@ -134,15 +134,7 @@
 </main>
 
 <script>
-  // 根据 GitHub Pages 地址（用户名.github.io/仓库名）自动生成 Issue 链接
-  (function () {
-    var user = location.hostname.split('.')[0];
-    var repo = location.pathname.split('/').filter(Boolean)[0] || 'NotchDock';
-    var url = location.hostname.endsWith('github.io')
-      ? 'https://github.com/' + user + '/' + repo + '/issues/new/choose'
-      : 'https://github.com';
-    document.querySelectorAll('.issues-link').forEach(function (a) { a.href = url; });
-  })();
+  document.querySelectorAll('.issues-link').forEach(function (a) { a.href = 'https://github.com/caokai1073/NotchDock/issues/new/choose'; });
 
   function setLang(l) {
     document.body.className = l;

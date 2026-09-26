@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NotchDock Support</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73;
+    --accent: #5b5cf0; --border: rgba(0,0,0,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b0b0f; --card: #17171c; --text: #f5f5f7; --muted: #a1a1a6;
+            --accent: #8b8cff; --border: rgba(255,255,255,.1); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+  header { text-align: center; margin-bottom: 40px; }
+  header img { width: 112px; height: 112px; }
+  h1 { font-size: 34px; margin: 12px 0 4px; letter-spacing: -.02em; }
+  .tagline { color: var(--muted); margin: 0; }
+  .lang { display: inline-flex; gap: 4px; margin-top: 20px; padding: 4px;
+          background: var(--card); border: 1px solid var(--border); border-radius: 999px; }
+  .lang button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px;
+                 padding: 4px 14px; border-radius: 999px; cursor: pointer; }
+  .lang button.on { background: var(--accent); color: #fff; }
+  section { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+            padding: 24px 28px; margin-bottom: 16px; }
+  h2 { font-size: 20px; margin: 0 0 12px; }
+  h3 { font-size: 16px; margin: 18px 0 4px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+         padding: 10px 20px; border-radius: 12px; font-weight: 600; margin-top: 4px; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 32px; }
+  [data-lang] { display: none; }
+  body.en [data-lang="en"], body.zh [data-lang="zh"] { display: block; }
+</style>
+</head>
+<body class="en">
+<main>
+  <header>
+    <img src="icon.png" alt="NotchDock icon">
+    <h1>NotchDock</h1>
+    <p class="tagline" data-lang="en">Turn your MacBook notch into a launcher.</p>
+    <p class="tagline" data-lang="zh">把 MacBook 的刘海变成快捷启动台</p>
+    <div class="lang">
+      <button id="btn-en" onclick="setLang('en')">English</button>
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+
+  <!-- English -->
+  <div data-lang="en">
+    <section>
+      <h2>Get help</h2>
+      <p>Found a bug or have a feature idea? Open an issue on GitHub — we read every one.</p>
+      <a class="btn issues-link" href="#">Report an issue</a>
+    </section>
+
+    <section>
+      <h2>Getting started</h2>
+      <ul>
+        <li>Move the pointer to the notch at the top center of the screen to open the panel. On Macs without a notch, hover over the thin line at the top center.</li>
+        <li>Click <b>+</b> to add apps or websites. Drag icons to reorder them.</li>
+        <li>Drag files onto the panel to put them on the shelf, or right-click a file in Finder › Services › Add to NotchDock.</li>
+        <li>Click the gear button in the panel to open Settings.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <h3>I can't find the app after installing it.</h3>
+      <p class="muted">NotchDock has no Dock or menu bar icon. Move the pointer to the notch. To open Settings, open NotchDock again from Launchpad or the Applications folder.</p>
+      <h3>"Add to NotchDock" doesn't appear in Finder's right-click menu.</h3>
+      <p class="muted">Open NotchDock once, then enable it in System Settings › Keyboard › Keyboard Shortcuts › Services › Files and Folders.</p>
+      <h3>Why do full-screen apps switch spaces when I open them?</h3>
+      <p class="muted">macOS doesn't allow other apps' windows inside a full-screen space. Websites and files open in a floating window instead, so you stay where you are.</p>
+      <h3>Where did my shelf files go?</h3>
+      <p class="muted">The shelf is temporary and is cleared when NotchDock quits. Right-click a file › Pin to Collection to keep it.</p>
+      <h3>How do I quit NotchDock?</h3>
+      <p class="muted">Open Settings (gear button) and click "Quit NotchDock" at the bottom.</p>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p>NotchDock does not collect any personal data. <a href="privacy.html">Read the privacy policy</a>.</p>
+    </section>
+  </div>
+
+  <!-- 中文 -->
+  <div data-lang="zh">
+    <section>
+      <h2>获取帮助</h2>
+      <p>遇到问题，或有功能建议？请在 GitHub 上提交 Issue，每一条我们都会查看。</p>
+      <a class="btn issues-link" href="#">提交问题反馈</a>
+    </section>
+
+    <section>
+      <h2>快速上手</h2>
+      <ul>
+        <li>把鼠标移到屏幕顶部中央的刘海处即可展开。没有刘海的 Mac，悬停在顶部中央的细线上。</li>
+        <li>点 <b>＋</b> 添加 App 或网页，拖动图标即可调整顺序。</li>
+        <li>把文件拖到面板上放入暂存区，或在访达中右键文件 › 服务 › 添加到 NotchDock。</li>
+        <li>点面板右上角的齿轮打开设置。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>常见问题</h2>
+      <h3>安装后找不到 App？</h3>
+      <p class="muted">NotchDock 没有程序坞图标和状态栏图标，把鼠标移到刘海即可。想打开设置，可以在启动台或“应用程序”文件夹里再次打开 NotchDock。</p>
+      <h3>访达右键菜单里没有“添加到 NotchDock”？</h3>
+      <p class="muted">先打开一次 NotchDock，然后在 系统设置 › 键盘 › 键盘快捷键 › 服务 › 文件和文件夹 中勾选。</p>
+      <h3>全屏时打开 App 为什么会切换桌面？</h3>
+      <p class="muted">macOS 不允许其他 App 的窗口出现在全屏空间中。网页和文件会以悬浮小窗打开，不会跳走。</p>
+      <h3>暂存区的文件不见了？</h3>
+      <p class="muted">暂存区是临时的，退出 NotchDock 后会清空。想长期保留，请右键文件 › 固定到合集。</p>
+      <h3>怎么退出 NotchDock？</h3>
+      <p class="muted">打开设置（齿轮按钮），点击最下方的“退出 NotchDock”。</p>
+    </section>
+
+    <section>
+      <h2>隐私</h2>
+      <p>NotchDock 不收集任何个人数据。<a href="privacy.html">查看隐私政策</a>。</p>
+    </section>
+  </div>
+
+  <footer>© 2026 Kai Cao</footer>
+</main>
+
+<script>
+  // 根据 GitHub Pages 地址（用户名.github.io/仓库名）自动生成 Issue 链接
+  (function () {
+    var user = location.hostname.split('.')[0];
+    var repo = location.pathname.split('/').filter(Boolean)[0] || 'NotchDock';
+    var url = location.hostname.endsWith('github.io')
+      ? 'https://github.com/' + user + '/' + repo + '/issues/new/choose'
+      : 'https://github.com';
+    document.querySelectorAll('.issues-link').forEach(function (a) { a.href = url; });
+  })();
+
+  function setLang(l) {
+    document.body.className = l;
+    document.getElementById('btn-en').classList.toggle('on', l === 'en');
+    document.getElementById('btn-zh').classList.toggle('on', l === 'zh');
+    document.documentElement.lang = l === 'zh' ? 'zh-Hans' : 'en';
+  }
+  setLang((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+</script>
+</body>
+</html>
